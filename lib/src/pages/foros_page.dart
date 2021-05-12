@@ -5,11 +5,19 @@ class ForoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
+        // extendBodyBehindAppBar: true,
         appBar: AppBar(
           shadowColor: Color.fromRGBO(250, 31, 38, 0.5),
           foregroundColor: Colors.transparent,
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
+          actions: <Widget>[
+            Icon(Icons.search),
+            SizedBox(
+              width: 25,
+            )
+          ],
+
+          backgroundColor: Color.fromRGBO(250, 31, 38, 1.0),
         ),
         drawer: MenuWidget(),
         body: _paginaCompleta(context));
@@ -19,18 +27,6 @@ class ForoPage extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.all(20.0),
       children: <Widget>[
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
         _tarjetas(context),
         SizedBox(
           height: 30.0,
@@ -103,7 +99,7 @@ class ForoPage extends StatelessWidget {
                 padding: EdgeInsets.all(20.0),
                 child: Image(
                   image: AssetImage(
-                    'assets/foro.jpg',
+                    'assets/foroUno.jpeg',
                   ),
                   height: 250.0,
                 ),
@@ -114,7 +110,7 @@ class ForoPage extends StatelessWidget {
                 },
                 title: Container(
                   child: Text(
-                    'Foro “Mujeres líderes: Mujeres en Perspectiva',
+                    'Foro  entrevista a Javier Aquino',
                     style:
                         TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -123,9 +119,15 @@ class ForoPage extends StatelessWidget {
                 ),
                 subtitle: Text(
                   '''
-El INJEO en coordinación con el Instituto de la Juventud del Estado de Chiapas, les invitamos a participar en el foro virtual “Mujeres líderes: Mujeres en Perspectiva”, donde nuestras ponentes destacarán la importancia del trabajo de chiapanecas y oaxaqueñas como impulsoras del crecimiento económico y las distintas perspectivas, todo ello en el marco de la celebración del Día Internacional de la Mujer.
+¡ES HOY! ¡ES HOY! ⚽️
+No te puedes perder esta increíble entrevista que realizará la directora Montserrat Heinze del Instituto de Cultura Física y Deporte de Oaxaca al futbolista oaxaqueño Javier Aquino, jugador de los Tigres.  
+ 
+18:00 hrs, a través de nuestro #FacebookLive.  🤩
 
-No te lo puedes perder este 8 de marzo a partir de las 17:00 hrs, a través de #FacebookLive.
+Instituto de Cultura Física y Deporte de Oaxaca
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
                   ''',
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.justify,

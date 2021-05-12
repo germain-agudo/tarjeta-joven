@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DetalleConvocatoria extends StatelessWidget {
+class ConvocatoriaDos extends StatelessWidget {
   final List<String> participantesName = [
-    'Instituto de la Juventud del Estado de Oaxaca',
+    ' Instituto Mexicano de la Juventud.',
   ];
   final List<String> participantesImage = [
-    'assets/injeo.jpeg',
+    'assets/imjuve.jpeg',
   ];
 
   @override
@@ -53,7 +53,7 @@ class DetalleConvocatoria extends StatelessWidget {
               color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w400),
         ),
         background: Image(
-          image: AssetImage('assets/convocatoriaUno-01.jpeg'),
+          image: AssetImage('assets/convocatoriaDos-01.jpeg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -77,7 +77,7 @@ class DetalleConvocatoria extends StatelessWidget {
                 width: 170,
                 child: Image(
                   alignment: Alignment.center,
-                  image: AssetImage('assets/convocatoriaUno-02.jpeg'),
+                  image: AssetImage('assets/convocatoriaDos-02.jpeg'),
                   // height: 150.0,
                   fit: BoxFit.cover,
                   // width: 150.0,
@@ -93,7 +93,7 @@ class DetalleConvocatoria extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'CONVOCA',
+                'IMJUVE',
                 style: Theme.of(context).textTheme.headline6,
                 textAlign: TextAlign.center,
                 // overflow: TextOverflow.ellipsis,
@@ -102,7 +102,7 @@ class DetalleConvocatoria extends StatelessWidget {
                 height: 10.0,
               ),
               Text(
-                '''Jóvenes Conectados''',
+                '''Comunidad Afromexicana en Oaxaca y municipios que forman parte del corredor interoceánico del Istmo de Tehuatepec''',
                 style: Theme.of(context).textTheme.subtitle1,
                 textAlign: TextAlign.center,
 
@@ -120,14 +120,16 @@ class DetalleConvocatoria extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       child: Text(
         '''
-CONVOCA
-A las y los jóvenes estudiantes oaxaqueños con un rango de edad entre los 12 a 29 años, que no cuenten con acceso a internet para
-continuar con su educación a distancia, a participar en la Actividad denominada “Jóvenes Conectados”. La Actividad tiene el objetivo de facilitar a la población joven estudiante del estado (mujeres y hombres en un rango de edad de 12 a
-29 años), el acceso a internet durante el periodo comprendido a un semestre escolar efectivo (5 meses) a fin de que puedan continuar
-con su educación a distancia.
-• Podrán participar jóvenes de 12 a 29 años que estén inscritos en el ciclo escolar 2020-2021 y que carezcan de conectividad
-para tomar sus clases de manera virtual.
-• Las y los participantes deben residir en el Estado de Oaxaca, en cualquiera de sus municipios. Link de convocatoria completa https://www.oaxaca.gob.mx/injeo/convocatorias/
+Comunidad Afromexicana en Oaxaca y municipios que forman parte del corredor interoceánico del Istmo de Tehuatepec, les compartimos la siguiente convocatoria del IMJUVE Instituto Mexicano de la Juventud. Si cumples con los requisitos, únete a #NodosTerritoriales para acompañar proyectos nacionales, con el objetivo de detectar necesidades y áreas de oportunidad para ayudar a las juventudes. 
+
+Les compartimos el link para la convocatoria completa:
+
+https://www.oaxaca.gob.mx/injeo/convocatorias/
+
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
+IMJUVE Instituto Mexicano de la Juventud
       
       ''',
         textAlign: TextAlign.justify,

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
-class DetalleConvocatoria extends StatelessWidget {
+class NoticiaDos extends StatelessWidget {
   final List<String> participantesName = [
-    'Instituto de la Juventud del Estado de Oaxaca',
+    'Alejandro Murat Hinojosa',
+    'Ivette Morán de Murat',
+    'Gobierno del Estado de Oaxaca'
   ];
   final List<String> participantesImage = [
-    'assets/injeo.jpeg',
+    'assets/alejandro-murat.jpg',
+    'assets/ivette.png',
+    'assets/gobierno.jpg'
   ];
 
   @override
@@ -53,7 +57,7 @@ class DetalleConvocatoria extends StatelessWidget {
               color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w400),
         ),
         background: Image(
-          image: AssetImage('assets/convocatoriaUno-01.jpeg'),
+          image: AssetImage('assets/noticiados-01.jpeg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -77,7 +81,7 @@ class DetalleConvocatoria extends StatelessWidget {
                 width: 170,
                 child: Image(
                   alignment: Alignment.center,
-                  image: AssetImage('assets/convocatoriaUno-02.jpeg'),
+                  image: AssetImage('assets/noticiados-02.jpeg'),
                   // height: 150.0,
                   fit: BoxFit.cover,
                   // width: 150.0,
@@ -93,7 +97,7 @@ class DetalleConvocatoria extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'CONVOCA',
+                'Mtro. Alejandro Murat',
                 style: Theme.of(context).textTheme.headline6,
                 textAlign: TextAlign.center,
                 // overflow: TextOverflow.ellipsis,
@@ -102,7 +106,7 @@ class DetalleConvocatoria extends StatelessWidget {
                 height: 10.0,
               ),
               Text(
-                '''Jóvenes Conectados''',
+                '''Seguimos impulsando a las juventudes oaxaqueñass''',
                 style: Theme.of(context).textTheme.subtitle1,
                 textAlign: TextAlign.center,
 
@@ -120,14 +124,13 @@ class DetalleConvocatoria extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       child: Text(
         '''
-CONVOCA
-A las y los jóvenes estudiantes oaxaqueños con un rango de edad entre los 12 a 29 años, que no cuenten con acceso a internet para
-continuar con su educación a distancia, a participar en la Actividad denominada “Jóvenes Conectados”. La Actividad tiene el objetivo de facilitar a la población joven estudiante del estado (mujeres y hombres en un rango de edad de 12 a
-29 años), el acceso a internet durante el periodo comprendido a un semestre escolar efectivo (5 meses) a fin de que puedan continuar
-con su educación a distancia.
-• Podrán participar jóvenes de 12 a 29 años que estén inscritos en el ciclo escolar 2020-2021 y que carezcan de conectividad
-para tomar sus clases de manera virtual.
-• Las y los participantes deben residir en el Estado de Oaxaca, en cualquiera de sus municipios. Link de convocatoria completa https://www.oaxaca.gob.mx/injeo/convocatorias/
+El día de hoy el Mtro. Alejandro Murat en su gira de trabajo en Santa María Huatulco entregó módems con internet ilimitado y gratuito del programa Jóvenes Conectados.
+¡Seguimos impulsando a las juventudes oaxaqueñas! 
+🤜🏼🤛🏽💥
+
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
       
       ''',
         textAlign: TextAlign.justify,

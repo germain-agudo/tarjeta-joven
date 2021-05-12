@@ -5,11 +5,25 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
+        // extendBodyBehindAppBar: true,
         appBar: AppBar(
           shadowColor: Color.fromRGBO(250, 31, 38, 0.5),
           foregroundColor: Colors.transparent,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color.fromRGBO(250, 31, 38, 1.0),
+          actions: <Widget>[
+            Icon(Icons.search),
+            SizedBox(
+              width: 25,
+            )
+          ],
+          // centerTitle: true,
+          /* title: Text(
+            'Noticias',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 25.0,
+                fontWeight: FontWeight.w400),
+          ), */
         ),
         drawer: MenuWidget(),
         body: _paginaCompleta(context));
@@ -23,15 +37,7 @@ class HomePage extends StatelessWidget {
         SizedBox(
           height: 30.0,
         ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
+        _noticiaDos(context),
         SizedBox(
           height: 30.0,
         ),
@@ -115,7 +121,7 @@ class HomePage extends StatelessWidget {
                 },
                 title: Container(
                   child: Text(
-                    'Campaña de salud',
+                    'Gracias a todas y todos los jóvenes ',
                     style:
                         TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -124,15 +130,19 @@ class HomePage extends StatelessWidget {
                 ),
                 subtitle: Text(
                   '''
-Yo Decido Cuidarme! 👏🏼👏🏼
+que participaron en los distintos talleres educativos 📚 
+así como a los ponentes de los mismos 👏. 
+Les estaremos informando sobre nuevos cursos en línea 🗓
+ en nuestras redes, estén atentos ❗❗
 
-Continuamos en el Tecnm Campus Oaxaca ‼️
-#DIFundirParaPrevenir 
-#JuventudResponsable 
-Alejandro Murat Hinojosa
-Ivette Morán de Murat
-Gobierno del Estado de Oaxaca
-Unidades Móviles DIF Estatal Oaxaca
+COBAO
+IEBO Oficial
+Cecyte Oaxaca
+Tecnm Campus Valle de Oaxaca
+Cseiio Oficial
+Telebachilleratos Comunitarios de Oaxaca
+UT Sierra Sur De Oaxaca
+
                   ''',
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.justify,
@@ -146,4 +156,65 @@ Unidades Móviles DIF Estatal Oaxaca
           )),
     );
   }
+
+// /** */
+
+  Widget _noticiaDos(BuildContext context) {
+    return GestureDetector(
+      child: Card(
+          elevation: 10.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20.0),
+                child: Image(
+                  image: AssetImage(
+                    'assets/noticiados-01.jpeg',
+                  ),
+                  height: 250.0,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, 'noticiaDos');
+                },
+                title: Container(
+                  child: Text(
+                    'Mtro. Alejandro Murat',
+                    style:
+                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  padding: EdgeInsets.only(bottom: 10),
+                ),
+                subtitle: Text(
+                  '''
+El día de hoy el Mtro. Alejandro Murat en su gira 
+de trabajo en Santa María Huatulco entregó módems 
+con internet ilimitado y gratuito del programa 
+Jóvenes Conectados.
+¡Seguimos impulsando a las juventudes oaxaqueñas! 🤜🏼🤛🏽💥
+
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
+
+                  ''',
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 12.0),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              )
+            ],
+          )),
+    );
+  }
+
+/** */
 }

@@ -9,11 +9,20 @@ class WebinarPage extends StatelessWidget {
     // final blocLogin = Provider.of(context);
 
     return Scaffold(
-        extendBodyBehindAppBar: true,
+        // extendBodyBehindAppBar: true,
         appBar: AppBar(
           shadowColor: Color.fromRGBO(250, 31, 38, 0.5),
           foregroundColor: Colors.transparent,
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
+          actions: <Widget>[
+            Icon(Icons.search),
+            SizedBox(
+              width: 25,
+            )
+          ],
+
+          backgroundColor: Color.fromRGBO(250, 31, 38, 1.0),
+          //
         ),
         drawer: MenuWidget(),
         body: _paginaCompleta(context));
@@ -27,15 +36,7 @@ class WebinarPage extends StatelessWidget {
         SizedBox(
           height: 30.0,
         ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
+        _webinarDos(context),
         SizedBox(
           height: 30.0,
         ),
@@ -112,7 +113,7 @@ class WebinarPage extends StatelessWidget {
                 padding: EdgeInsets.all(20.0),
                 child: Image(
                   image: AssetImage(
-                    'assets/webinar.jpg',
+                    'assets/webinarUno.jpeg',
                   ),
                   height: 250.0,
                 ),
@@ -123,7 +124,7 @@ class WebinarPage extends StatelessWidget {
                 },
                 title: Container(
                   child: Text(
-                    'Webinar ¡Mujeres en la ciencia!👩💡🔬',
+                    'Webinar ¿Qué es la prueba del Papanicolaou?🧐',
                     style:
                         TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -134,7 +135,78 @@ class WebinarPage extends StatelessWidget {
                   //'Sunt ullamco mollit minim nostrud eu dolor sunt cillum incididunt. Pariatur duis velit enim elit in anim sint esse consectetur enim irure. Est qui irure excepteur nostrud irure ex dolor sit cillum. Dolore laboris cillum velit commodo voluptate ut sunt pariatur qui ea.',
 
                   '''
-Webinar por la bióloga Keila Sánchez, quien nos hablará sobre la Importancia del Monitoreo Biológico de Fauna Silvestre 🐆🦌🦜
+Adoptemos una cultura del cuidado propio, vamos a informarnos, aprender y actuar en equipo. 🥰
+Por una #JuventudResponsable 🙋‍♀️🙋‍♂️🙋
+#DIFundirParaPrevenir 
+
+HOY, #FacebookLive ¿Qué es la prueba del Papanicolaou?🧐
+
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
+DIF Estatal Oaxaca
+Unidades Móviles DIF Estatal Oaxaca
+                  ''',
+                  //overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 12.0),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              )
+            ],
+          )),
+    );
+  }
+
+  // /** */
+  Widget _webinarDos(BuildContext context) {
+    return GestureDetector(
+      /* onTap: () {
+        print('sss');
+      }, */
+      child: Card(
+          elevation: 10.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20.0),
+                child: Image(
+                  image: AssetImage(
+                    'assets/webinarDos.jpeg',
+                  ),
+                  height: 250.0,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  //Navigator.pushNamed(context, 'detalleConvocatoria');
+                },
+                title: Container(
+                  child: Text(
+                    'Webinar Dispositivo Intrauterino',
+                    style:
+                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  padding: EdgeInsets.only(bottom: 10),
+                ),
+                subtitle: Text(
+                  //'Sunt ullamco mollit minim nostrud eu dolor sunt cillum incididunt. Pariatur duis velit enim elit in anim sint esse consectetur enim irure. Est qui irure excepteur nostrud irure ex dolor sit cillum. Dolore laboris cillum velit commodo voluptate ut sunt pariatur qui ea.',
+
+                  '''
+Les recordamos que HOY es nuestro #FacebookLive sobre el DIU, en el cual podrán informarse y conocer sobre el dispositivo para cualquier decisión futura. 😎
+¡Yo decido cuidarme! 🙋‍♀️🙋
+#DIFundirParaPrevenir #JuventudResponsable 
+
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
+DIF Estatal Oaxaca
                   ''',
                   //overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.justify,

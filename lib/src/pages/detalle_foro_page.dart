@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class DetalleForo extends StatelessWidget {
+  final List<String> participantesName = [
+    ' Monserrat Heinze',
+  ];
+  final List<String> participantesImage = [
+    'assets/Monserrat_Heinze.jpeg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,12 +17,22 @@ class DetalleForo extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate([
           SizedBox(
-            height: 10.0,
+            height: 30.0,
           ),
           _posterTitulo(context),
+          SizedBox(
+            height: 30.0,
+          ),
           _descripcion(),
-          _descripcion(),
-          _crearParticipantePageView()
+          // _descripcion(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _crearParticipantePageView(),
+          // _crearParticipantePageView(),
+          SizedBox(
+            height: 30.0,
+          ),
         ]))
       ],
     ));
@@ -25,18 +42,18 @@ class DetalleForo extends StatelessWidget {
     return SliverAppBar(
       elevation: 2.0,
       backgroundColor: Color.fromRGBO(250, 31, 38, 0.85),
-      expandedHeight: 200.0,
+      expandedHeight: 250.0,
       floating: false,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
         title: Text(
-          'Foro “Mujeres líderes: Mujeres en Perspectiva"',
+          '',
           style: TextStyle(
               color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w400),
         ),
         background: Image(
-          image: AssetImage('assets/foro.jpg'),
+          image: AssetImage('assets/foroUno.jpeg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -55,9 +72,16 @@ class DetalleForo extends StatelessWidget {
                 )),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
-              child: Image(
-                image: AssetImage('assets/foro-secundario.jpg'),
-                height: 150.0,
+              child: Container(
+                height: 150,
+                width: 170,
+                child: Image(
+                  alignment: Alignment.center,
+                  image: AssetImage('assets/foroUno-02.jpeg'),
+                  // height: 150.0,
+                  fit: BoxFit.cover,
+                  // width: 150.0,
+                ),
               ),
             ),
           ),
@@ -69,13 +93,20 @@ class DetalleForo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Foro ',
+                'Entrevista a Javier Aquino',
                 style: Theme.of(context).textTheme.headline6,
-                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                // overflow: TextOverflow.ellipsis,
+              ),
+              SizedBox(
+                height: 10.0,
               ),
               Text(
-                '''“Mujeres líderes: Mujeres en Perspectiva"''',
+                '''Futbolista oaxaqueño, jugador de los Tigres''',
                 style: Theme.of(context).textTheme.subtitle1,
+                textAlign: TextAlign.center,
+
+                //overflow: TextOverflow.ellipsis,
               ),
             ],
           ))
@@ -87,12 +118,22 @@ class DetalleForo extends StatelessWidget {
   Widget _descripcion() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-      child: Text('''
-El INJEO en coordinación con el Instituto de la Juventud del Estado de Chiapas, les invitamos a participar en el foro virtual “Mujeres líderes: Mujeres en Perspectiva”, donde nuestras ponentes destacarán la importancia del trabajo de chiapanecas y oaxaqueñas como impulsoras del crecimiento económico y las distintas perspectivas, todo ello en el marco de la celebración del Día Internacional de la Mujer.
+      child: Text(
+        '''
+¡ES HOY! ¡ES HOY! ⚽️
+No te puedes perder esta increíble entrevista que realizará la directora Montserrat Heinze del Instituto de Cultura Física y Deporte de Oaxaca al futbolista oaxaqueño Javier Aquino, jugador de los Tigres.  
+ 
+18:00 hrs, a través de nuestro #FacebookLive.  🤩
 
-No te lo puedes perder este 8 de marzo a partir de las 17:00 hrs, a través de #FacebookLive.
+Instituto de Cultura Física y Deporte de Oaxaca
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
       
-      ''', textAlign: TextAlign.justify),
+      ''',
+        textAlign: TextAlign.justify,
+        style: TextStyle(fontSize: 15),
+      ),
     );
   }
 
@@ -102,13 +143,14 @@ No te lo puedes perder este 8 de marzo a partir de las 17:00 hrs, a través de #
       child: PageView.builder(
         pageSnapping: false,
         controller: PageController(viewportFraction: 0.3, initialPage: 1),
-        itemCount: 5,
-        itemBuilder: (contexto, i) => _actorTarjeta('Alejandro Murat Hinojosa'),
+        itemCount: participantesName.length,
+        itemBuilder: (contexto, i) =>
+            _actorTarjeta(participantesName[i], participantesImage[i]),
       ),
     );
   }
 
-  Widget _actorTarjeta(String nombre) {
+  Widget _actorTarjeta(String nombre, String imagen) {
     return SizedBox(
       child: Container(
         child: Column(
@@ -116,7 +158,7 @@ No te lo puedes perder este 8 de marzo a partir de las 17:00 hrs, a través de #
             ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: Image(
-                  image: AssetImage('assets/alejandro-murat.jpg'),
+                  image: AssetImage(imagen),
                   fit: BoxFit.cover,
                   height: 120,
                   width: 100,

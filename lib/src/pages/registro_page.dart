@@ -317,7 +317,7 @@ class RegistroPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'IJEO',
+                  'INJEO',
                   style: TextStyle(color: Colors.white, fontSize: 25.0),
                 )
               ],

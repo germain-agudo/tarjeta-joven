@@ -10,12 +10,17 @@ class NoticiaDetalle extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate([
           SizedBox(
-            height: 10.0,
+            height: 30.0,
           ),
           _posterTitulo(context),
+          SizedBox(
+            height: 30.0,
+          ),
           _descripcion(),
-          _descripcion(),
-          _crearParticipantePageView()
+          // _descripcion(),
+
+          _crearParticipantePageView(),
+          // _crearParticipantePageView(),
         ]))
       ],
     ));
@@ -25,13 +30,13 @@ class NoticiaDetalle extends StatelessWidget {
     return SliverAppBar(
       elevation: 2.0,
       backgroundColor: Color.fromRGBO(250, 31, 38, 0.85),
-      expandedHeight: 200.0,
+      expandedHeight: 250.0,
       floating: false,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
         title: Text(
-          'Campaña de salud',
+          '',
           style: TextStyle(
               color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w400),
         ),
@@ -55,9 +60,16 @@ class NoticiaDetalle extends StatelessWidget {
                 )),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
-              child: Image(
-                image: AssetImage('assets/noticia-titulo.jpeg'),
-                height: 150.0,
+              child: Container(
+                height: 150,
+                width: 170,
+                child: Image(
+                  alignment: Alignment.center,
+                  image: AssetImage('assets/noticia-titulo.jpeg'),
+                  // height: 150.0,
+                  fit: BoxFit.cover,
+                  // width: 150.0,
+                ),
               ),
             ),
           ),
@@ -69,12 +81,15 @@ class NoticiaDetalle extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Campaña de salud',
+                'Felicitaciones',
                 style: Theme.of(context).textTheme.headline6,
                 overflow: TextOverflow.ellipsis,
               ),
+              SizedBox(
+                height: 20.0,
+              ),
               Text(
-                '''Seguimos trabajando en equipo  con el DIF Estatal Oaxaca''',
+                '''Gracias a todas y todos los jóvenes que participaron en los distintos talleres educativos''',
                 style: Theme.of(context).textTheme.subtitle1,
                 //overflow: TextOverflow.ellipsis,
               ),
@@ -89,18 +104,21 @@ class NoticiaDetalle extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       child: Text(
-          '''
-Continuamos en el Tecnm Campus Oaxaca ‼️
-#DIFundirParaPrevenir 
-#JuventudResponsable 
-Alejandro Murat Hinojosa
-Ivette Morán de Murat
-Gobierno del Estado de Oaxaca
-Unidades Móviles DIF Estatal Oaxaca
+        '''
+Gracias a todas y todos los jóvenes que participaron en los distintos talleres educativos 📚 así como a los ponentes de los mismos 👏. Les estaremos informando sobre nuevos cursos en línea 🗓 en nuestras redes, estén atentos ❗❗
+
+COBAO
+IEBO Oficial
+Cecyte Oaxaca
+Tecnm Campus Valle de Oaxaca
+Cseiio Oficial
+Telebachilleratos Comunitarios de Oaxaca
+UT Sierra Sur De Oaxaca
       
-      ''' +
-              'Qui fugiat quis duis mollit deserunt qui est aliquip adipisicing laborum non minim. Commodo fugiat dolor culpa irure. Consectetur duis consequat dolor velit quis excepteur ullamco amet Lorem adipisicing et nulla cillum labore. Ea ut aliquip amet amet ex nulla consequat in mollit laborum.',
-          textAlign: TextAlign.justify),
+      ''',
+        textAlign: TextAlign.justify,
+        style: TextStyle(fontSize: 15),
+      ),
     );
   }
 
@@ -110,8 +128,9 @@ Unidades Móviles DIF Estatal Oaxaca
       child: PageView.builder(
         pageSnapping: false,
         controller: PageController(viewportFraction: 0.3, initialPage: 1),
-        itemCount: 5,
-        itemBuilder: (contexto, i) => _actorTarjeta('Alejandro Murat Hinojosa'),
+        itemCount: 1,
+        itemBuilder: (contexto, i) =>
+            _actorTarjeta('Instituto de la Juventud del Estado de Oaxaca'),
       ),
     );
   }
@@ -124,7 +143,7 @@ Unidades Móviles DIF Estatal Oaxaca
             ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: Image(
-                  image: AssetImage('assets/alejandro-murat.jpg'),
+                  image: AssetImage('assets/injeo.jpeg'),
                   fit: BoxFit.cover,
                   height: 120,
                   width: 100,

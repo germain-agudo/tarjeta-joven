@@ -5,11 +5,19 @@ class ConvocatoriaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
+        // extendBodyBehindAppBar: true,
         appBar: AppBar(
           shadowColor: Color.fromRGBO(250, 31, 38, 0.5),
           foregroundColor: Colors.transparent,
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
+          actions: <Widget>[
+            Icon(Icons.search),
+            SizedBox(
+              width: 25,
+            )
+          ],
+
+          backgroundColor: Color.fromRGBO(250, 31, 38, 1.0),
         ),
         drawer: MenuWidget(),
         body: _paginaCompleta(context));
@@ -23,15 +31,7 @@ class ConvocatoriaPage extends StatelessWidget {
         SizedBox(
           height: 30.0,
         ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
-        SizedBox(
-          height: 30.0,
-        ),
-        _tarjetas(context),
+        _convocatoriaDos(context),
         SizedBox(
           height: 30.0,
         ),
@@ -101,7 +101,7 @@ class ConvocatoriaPage extends StatelessWidget {
                 padding: EdgeInsets.all(20.0),
                 child: Image(
                   image: AssetImage(
-                    'assets/convocatoria.jpg',
+                    'assets/convocatoriaUno-01.jpeg',
                   ),
                   height: 250.0,
                 ),
@@ -112,7 +112,7 @@ class ConvocatoriaPage extends StatelessWidget {
                 },
                 title: Container(
                   child: Text(
-                    'Convocatoria Microcréditos',
+                    'Convocatoria Jóvenes Conectados',
                     style:
                         TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -121,7 +121,70 @@ class ConvocatoriaPage extends StatelessWidget {
                 ),
                 subtitle: Text(
                   '''
-Les compartimos los formularios para que se registren en la convocatoria de Microcréditos, Jóvenes Creciendo en Oaxaca.
+CONVOCA
+A las y los jóvenes estudiantes oaxaqueños con un rango de edad entre los 12 a 29 años, que no cuenten con acceso a internet para
+continuar con su educación a distancia, a participar en la Actividad denominada “Jóvenes Conectados”. La Actividad tiene el objetivo de facilitar a la población joven estudiante del estado (mujeres y hombres en un rango de edad de 12 a
+29 años), el acceso a internet durante el periodo comprendido a un semestre escolar efectivo (5 meses) a fin de que puedan continuar
+con su educación a distancia.
+• Podrán participar jóvenes de 12 a 29 años que estén inscritos en el ciclo escolar 2020-2021 y que carezcan de conectividad
+para tomar sus clases de manera virtual.
+• Las y los participantes deben residir en el Estado de Oaxaca, en cualquiera de sus municipios. Link de convocatoria completa https://www.oaxaca.gob.mx/injeo/convocatorias/
+
+                  ''',
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 12.0),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              )
+            ],
+          )),
+    );
+  }
+
+  Widget _convocatoriaDos(BuildContext context) {
+    return GestureDetector(
+      child: Card(
+          elevation: 10.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20.0),
+                child: Image(
+                  image: AssetImage(
+                    'assets/convocatoriaDos-01.jpeg',
+                  ),
+                  height: 250.0,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, 'convocatoriaDos');
+                },
+                title: Container(
+                  child: Text(
+                    'convocatoria del IMJUVE ',
+                    style:
+                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  padding: EdgeInsets.only(bottom: 10),
+                ),
+                subtitle: Text(
+                  '''
+que forman parte del corredor interoceánico del Istmo de Tehuatepec, les compartimos la siguiente convocatoria del IMJUVE Instituto Mexicano de la Juventud. Si cumples con los requisitos, únete a #NodosTerritoriales para acompañar proyectos nacionales, con el objetivo de detectar necesidades y áreas de oportunidad para ayudar a las juventudes. 
+
+Les compartimos el link para la convocatoria completa:
+https://www.oaxaca.gob.mx/injeo/convocatorias/
+
+Alejandro Murat Hinojosa
+Ivette Morán de Murat
+Gobierno del Estado de Oaxaca
+IMJUVE Instituto Mexicano de la Juventud
 
                   ''',
                   overflow: TextOverflow.ellipsis,
