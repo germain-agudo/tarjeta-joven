@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Tarjeta Joven Digital ',
-        initialRoute: 'home',
+        initialRoute: 'login',
         routes: {
           'home': (BuildContext context) => HomePage(),
           'registro': (BuildContext context) => RegistroPage(),
